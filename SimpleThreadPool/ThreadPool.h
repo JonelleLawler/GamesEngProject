@@ -5,7 +5,8 @@
 #include <thread>
 #include <queue>
 #include <functional>
-
+#include <mutex>
+#include <condition_variable>
 class ThreadPool {
 public:
 	ThreadPool();
@@ -14,6 +15,8 @@ public:
 private:
 	std::vector<std::thread> m_threads;
 	std::queue<std::function<void()>> m_tasks;
+	std::mutex mutex_queue;
+	std::condition_variable conditionVar;
 };
 #endif // !THREAD_POOL_H
 

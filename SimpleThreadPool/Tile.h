@@ -9,6 +9,7 @@ public:
 	void setUp();
 	void render(sf::RenderWindow &t_window);
 	void setPos(sf::Vector2f pos);
+	sf::Vector2f GetPosition();
 
 	sf::RectangleShape tileBody;
 	int tileSize;

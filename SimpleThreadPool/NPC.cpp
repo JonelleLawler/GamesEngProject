@@ -1,7 +1,11 @@
 #include "NPC.h"
 
-NPC::NPC(Tile* t_spawnTile, float t_size, Tile* t_targetTile, float t_outline, int t_id)
+NPC::NPC()
 {
+    npcBody.setPosition(10, 10);
+    npcBody.setSize(sf::Vector2f(10, 10));
+    npcBody.setFillColor(sf::Color::Blue);
+  //  setTarget(t_targetTile);
 }
 
 void NPC::update(sf::Time t_dt)
@@ -10,6 +14,7 @@ void NPC::update(sf::Time t_dt)
 
 void NPC::render(sf::RenderWindow& t_window)
 {
+    t_window.draw(npcBody);
 }
 
 sf::Vector2f NPC::getPos()
@@ -29,4 +34,9 @@ Tile* NPC::getCurrentTile()
 
 void NPC::setMapPointer(Map* t_map)
 {
+}
+
+void NPC::setTarget(Tile* tile)
+{
+    target = tile;
 }

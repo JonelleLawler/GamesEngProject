@@ -7,7 +7,7 @@ class NPC
 {
 public:
 
-	NPC(Tile* t_spawnTile, float t_size, Tile* t_targetTile, float t_outline, int t_id);
+	NPC();
 
 	void update(sf::Time t_dt);
 
@@ -22,11 +22,13 @@ public:
 
 	Tile* getCurrentTile();
 
-
 	static void setMapPointer(Map* t_map);
 
-private:
+	sf::RectangleShape npcBody;
 
-	int m_id = 0;
+	Tile* target;
+	void setTarget(Tile* tile);
+
+private:
 };
 #endif // !NPC_H

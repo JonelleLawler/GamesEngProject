@@ -4,7 +4,7 @@
 Game::Game() :
 	m_window{ sf::VideoMode{ 1000, 1000, 32 }, "Game Eng Project" }
 {
-	
+
 }
 
 Game::~Game()

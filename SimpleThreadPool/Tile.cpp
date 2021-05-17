@@ -28,4 +28,9 @@ void Tile::setPos(sf::Vector2f pos)
 	tileBody.setPosition(sf::Vector2f(pos));
 }
 
+sf::Vector2f Tile::GetPosition()
+{
+	return tileBody.getPosition();
+}
+
 

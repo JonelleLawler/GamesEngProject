@@ -28,6 +28,8 @@ auto ThreadPool::queue(F&& f, Args&&... args)
         std::bind(std::forward<F>(f), std::forward<Args>(args)...)
         );
 
+  // Returns a future object associated with the same shared state as* this.
+  // An exception is thrown if* this has no shared state or get_future has already been called.
     std::future<return_type> res = task->get_future();
     {
         std::unique_lock<std::mutex> lock(mutex_queue);
@@ -40,7 +42,6 @@ auto ThreadPool::queue(F&& f, Args&&... args)
 
         m_tasks.emplace([task]() { (*task)(); });
     }
-
     conditionVar.notify_one();
     return res;
 }

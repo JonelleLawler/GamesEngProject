@@ -12,12 +12,23 @@
 #pragma comment(lib,"sfml-window.lib") 
 #pragma comment(lib,"sfml-network.lib") 
 #endif 
-#include "ThreadPool.h"
+#include"ThreadPool.h"
 #include<iostream>
 #include"Game.h"
 int main() {
 
-	ThreadPool tp;
+	
 	Game game;
 	game.run();
+
+
+	ThreadPool pool(100); //creates an instance of the threadpool with 100 threads
+
+
+	// pool.enqueue(job to do so here our astar)
+
+	// auto future = pool.enqueue(jobWithReturn);
+
+   //	std::string returnedString = future.get(); //future.get() blocks until the value is ready to be obtained
+
 }

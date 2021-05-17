@@ -7,7 +7,7 @@ class Player
 {
 public:
 
-	Player(Tile* t_spawnTile, float t_size, Tile* t_targetTile, float t_outline);
+	Player();
 
 	void update(sf::Time t_dt);
 
@@ -17,6 +17,9 @@ public:
 	sf::Vector2f getPos();
 	sf::Vector2f getPreviousPos();
 
+	void setPos(sf::Vector2f pos);
+
+	sf::RectangleShape playerBody;
 
 	std::vector<Tile*> m_path;
 

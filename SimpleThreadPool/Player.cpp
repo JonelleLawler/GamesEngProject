@@ -1,7 +1,9 @@
 #include "Player.h"
 
-Player::Player(Tile* t_spawnTile, float t_size, Tile* t_targetTile, float t_outline)
+Player::Player()
 {
+    playerBody.setFillColor(sf::Color::Red);
+    playerBody.setPosition(sf::Vector2f(50.0f, 50.0f));
 }
 
 void Player::update(sf::Time t_dt)
@@ -10,6 +12,7 @@ void Player::update(sf::Time t_dt)
 
 void Player::render(sf::RenderWindow& t_window)
 {
+    t_window.draw(playerBody);
 }
 
 sf::Vector2f Player::getPos()
@@ -20,6 +23,11 @@ sf::Vector2f Player::getPos()
 sf::Vector2f Player::getPreviousPos()
 {
     return sf::Vector2f();
+}
+
+void Player::setPos(sf::Vector2f pos)
+{
+    playerBody.setPosition(pos);
 }
 
 Tile* Player::getCurrentTile()

@@ -4,7 +4,7 @@
 Game::Game() :
 	m_window{ sf::VideoMode{ 1000, 1000, 32 }, "Game Eng Project" }
 {
-
+	player.setPos(sf::Vector2f(50, 50));
 }
 
 Game::~Game()
@@ -31,6 +31,8 @@ void Game::run()
 	}
 }
 
+
+
 void Game::processEvents()
 {
 	sf::Event event;
@@ -42,6 +44,22 @@ void Game::processEvents()
 			if (event.key.code == sf::Keyboard::Escape)
 			{
 				m_window.close();
+			}
+			if (event.key.code == sf::Keyboard::W)
+			{
+				player.setPos(player.getPos() + sf::Vector2f(15, 0));
+			}
+			if (event.key.code == sf::Keyboard::A)
+			{
+				player.setPos(player.getPos() + sf::Vector2f(0, -15));
+			}
+			if (event.key.code == sf::Keyboard::S)
+			{
+				player.setPos(player.getPos() + sf::Vector2f(-15, 0));
+			}
+			if (event.key.code == sf::Keyboard::D)
+			{
+				player.setPos(player.getPos() + sf::Vector2f(0, 15));
 			}
 		}
 		if (sf::Event::Closed == event.type)
@@ -60,6 +78,8 @@ void Game::update(sf::Time t_deltaTime)
 void Game::render()
 {
 	m_window.clear();
+	player.render(m_window);
 	m_map.render(m_window);
+	npc.render(m_window);
 	m_window.display();
 }

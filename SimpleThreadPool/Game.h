@@ -3,6 +3,7 @@
 #include "ThreadPool.h"
 #include <queue>
 #include "NPC.h"
+#include "Player.h"
 class Game
 {
 public:
@@ -12,6 +13,8 @@ public:
 
 	Map m_map;
 	NPC npc;
+	Player player;
+
 
 private:
 

@@ -1,7 +1,6 @@
 #pragma once
 #include"Node.h"
-#include"Arc.h"
-
+#include"GraphArc.h"
 template<class NodeType, class ArcType>
 class CostCompare
 {

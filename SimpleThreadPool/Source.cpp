@@ -14,7 +14,10 @@
 #endif 
 #include "ThreadPool.h"
 #include<iostream>
+#include"Game.h"
 int main() {
 
 	ThreadPool tp;
+	Game game;
+	game.run();
 }

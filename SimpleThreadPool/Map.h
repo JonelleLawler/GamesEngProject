@@ -19,7 +19,7 @@ public:
 	int getTileY(sf::Vector2i location);
 
 	Tile** tiles;
-	int mapSize;
+	int mapSize = 90;
 	sf::Vector2f startPos = sf::Vector2f(50.0f, 50.0f);
 	
 };

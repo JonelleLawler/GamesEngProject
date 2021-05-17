@@ -31,6 +31,14 @@ void Map::update(sf::Time t_dt)
 
 void Map::render(sf::RenderWindow& t_window)
 {
+    int counter = 0;      
+    for (int i = 0; i < 30; i++)
+    {
+        for (int j = 0; j < 30; j++)
+        {
+            tiles[i][j].render(t_window);
+        }
+    }
 }
 
 float Map::length(sf::Vector2f t_vector)

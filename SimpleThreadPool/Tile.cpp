@@ -11,7 +11,7 @@ Tile::~Tile()
 
 void Tile::setUp()
 {
-	tileBody.setSize(sf::Vector2f(5, 5));
+	tileBody.setSize(sf::Vector2f(20, 20));
 	tileBody.setFillColor(sf::Color::Green);
 	tileBody.setOutlineColor(sf::Color::Black);
 	tileBody.setOutlineThickness(1);

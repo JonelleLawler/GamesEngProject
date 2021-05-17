@@ -1,6 +1,7 @@
 #pragma once
 #include<SFML/Graphics.hpp>
 #include"Tile.h"
+#include"GraphArc.h"
 class Map
 {
 public:
@@ -21,5 +22,5 @@ public:
 	Tile** tiles;
 	int mapSize = 90;
 	sf::Vector2f startPos = sf::Vector2f(50.0f, 50.0f);
-	
+
 };
